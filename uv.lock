@@ -1,0 +1,31 @@
+version = 1
+revision = 1
+requires-python = ">=3.12"
+
+[[package]]
+name = "uv-git-debug-a"
+version = "0.1.0"
+source = { git = "https://github.com/kubotty/uv-git-debug-a.git?tag=0.1.0#c9eb8a825f5afc4d668195f6f6f81bbe863428ec" }
+
+[[package]]
+name = "uv-git-debug-b"
+version = "0.1.0"
+source = { git = "https://github.com/kubotty/uv-git-debug-b.git?tag=0.1.0#a61894f764c206d46eef66bd07bb56832b9c01a9" }
+dependencies = [
+    { name = "uv-git-debug-a" },
+]
+
+[[package]]
+name = "uv-git-debug-c"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "uv-git-debug-a" },
+    { name = "uv-git-debug-b" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "uv-git-debug-a", git = "https://github.com/kubotty/uv-git-debug-a.git?tag=0.1.0" },
+    { name = "uv-git-debug-b", git = "https://github.com/kubotty/uv-git-debug-b.git?tag=0.1.0" },
+]
