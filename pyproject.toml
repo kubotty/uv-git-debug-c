@@ -1,6 +1,6 @@
 [project]
 name = "uv-git-debug-c"
-version = "0.1.0"
+version = "0.2.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -10,9 +10,18 @@ dependencies = [
 ]
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"uv_git_debug_c" = [
+    "py.typed",
+]
+
 
 [tool.uv.sources]
-uv-git-debug-b = { git = "https://github.com/kubotty/uv-git-debug-b.git", tag = "0.1.0" }
-uv-git-debug-a = { git = "https://github.com/kubotty/uv-git-debug-a.git", tag = "0.1.0" }
+uv-git-debug-b = { git = "https://github.com/kubotty/uv-git-debug-b.git", tag = "0.2.0" }
+uv-git-debug-a = { git = "https://github.com/kubotty/uv-git-debug-a.git", tag = "0.2.0" }
